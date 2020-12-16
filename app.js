@@ -26,21 +26,21 @@ app.get('/', (_, res) => res.json({ message: 'Hello World!' }))
      );
 });
 
-app.get("//bookmarks/:id", (req, res) => {
-        const myCat= req.params.category
-        console.log(req.params.category)
-        connection.query(
-          "SELECT * from product where category=?", [myCat], 
-          (err, results) => {
-            if (err) {  
-              console.log(err);
-              res.status(500).send("Error retrieving data");
-            } else {
-              res.status(200).json(results);
-            }
-          }
-        );
-      });
+app.get("/bookmarks/:id", (req, res) => {
+    const myCat= req.params.id
+    console.log(req.params.id)
+    connection.query(
+      "SELECT * from bookmark where id=?", [myCat], 
+      (err, results) => {
+        if (err) {  
+          console.log(err);
+          res.status(500).send("Error retrieving data");
+        } else {
+          res.status(200).json(results);
+        }
+      }
+    );
+  });
   
 
 
