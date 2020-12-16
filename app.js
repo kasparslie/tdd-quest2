@@ -1,9 +1,11 @@
 // app.js
 const express = require('express');
 const bodyParser = require('body-parser');
+
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+<<<<<<< HEAD
 require('dotenv').config();
 const connection = require('./connection');
 
@@ -45,5 +47,7 @@ app.get("/bookmarks/:id", (req, res) => {
 
 
 
+=======
+>>>>>>> parent of b984e40... innitial push
 
 module.exports = app;
